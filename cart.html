@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>
+  
+    .btn-green:hover {
+      background-color: #28a745;
+      color: #fff;
+    }
+    .inline-buttons form {
+      display: inline-block;
+    }
+  
+
+</style>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <a class="navbar-brand" href="index.html">
+      <img src="LOGO.png" alt="Thrift things logo" style="width: 30%;" class="mx-3">   
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <form class="form-inline">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search" aria-label="Search" style="display: none;">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" id="searchToggle">
+                  <i class="fa-solid fa-search"></i>
+                </button>
+              </div>
+            </div>
+          </form>   
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="account.html"><i class="fa-regular fa-user"></i>  Account</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a>
+      </li>
+        <li class="nav-item">
+          <a class="nav-link"  id = "nav-link"href="index.html">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="product.html">ALL PRODUCTS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="categories.html">CATEGORIES</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="faq.html">FAQ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contacts">CONTACT US</a>
+        </li>
+        
+      </ul>
+    </div>
+  </nav>
+  
+
+  <div class="container" style="align-items: center; margin-top: 10%;">
+    <h4 style="text-align: center; margin-bottom: 5%;">Your Shopping cart
+      <p>Total Item(1)</p>
+    </h4>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-3">
+          <img src="product1.jpg" style="width: 28%; margin-left: 40%;" alt="">
+        </div>
+        <div class="col-md-3">
+          <p>Stussy London Paris</p>
+          <p style="display: inline;">PHP 800.00</p>
+        </div>
+        <div class="col-md-3">
+          <p>Quantity</p>
+          <div class="quantity" style="font-size: 15px;">
+            <button style="border-style: none;" class="btn">-</button>   
+            <p style="display: inline; ">1</p>
+            <button style="border-style: none;" class="btn">+</button>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <p>Total</p>
+          <p>PHP 800.00</p>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-3" style="margin-left: 9%;">
+    <h6>Total</h6>
+    <p>PHP 800.00</p>
+    <div class="inline-buttons">
+      <form action="checkout.html">
+        <button type="submit" class="btn btn-green btn-outline-primary">Checkout</button>
+      </form>
+      <form action="product.html">
+        <button type="submit" class="btn btn-outline-primary">Continue Shopping</button>
+      </form>
+    </div>
+  </div>
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+  <!-- Scripts -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var toggleButton = document.getElementById("navbarToggle");
+      var navbarLinks = document.getElementById("navbarLinks");
+      var navlink = document.getElementsByClassName("nav-link");
+
+      toggleButton.addEventListener("click", function() {
+        navbarLinks.classList.toggle("show");
+      });
+
+      // Close navbar when clicking outside
+      document.addEventListener("click", function(event) {
+        if (!navbarLinks.contains(event.target) && !toggleButton.contains(event.target)) {
+          navbarLinks.classList.remove("show");
+        }
+      });
+    });
+
+    document.getElementById('searchToggle').addEventListener('click', function() {
+      var input = document.querySelector('.form-inline input');
+      input.style.display = input.style.display === 'none' ? 'block' : 'none';
+    });
+
+    let slideIndex = 0;
+
+    function showSlides() {
+      let slides = document.getElementsByClassName("slide");
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {
+        slideIndex = 1
+      }    
+      slides[slideIndex-1].style.display = "block";
+      setTimeout(showSlides, 3000); // Change image every 3 seconds
+    }
+
+    showSlides();
+  </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce Admin Panel</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="col-md-1 mx-auto"> 
+<img src="LOGO.png" alt="LOGO" style="width: 290%; " class="mt-5">
+</div>
+        <!-- Product Form -->
+        <div class="row mt-5">
+            <div class="col-md-6 offset-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">Add Product</h2>
+                        <form>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Product Name" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" placeholder="Product Description" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Size" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Color" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Material Quality" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="number" class="form-control" placeholder="Price" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary d-block mx-auto " style="width: 90%" >Add Product</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <h2>Products</h2>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-3">
+                    <img src="placeholder_image.jpg" class="card-img-top" alt="Product Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Product Name</h5>
+                        <p class="card-text">Product Description</p>
+                        <p class="card-text">Size: M</p>
+                        <p class="card-text">Color: Blue</p>
+                        <p class="card-text">Material Quality: Cotton</p>
+                        <p class="card-text">Price: $25.99</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more product cards as needed -->
+        </div>
+    </div>
+</body>
+</html>
